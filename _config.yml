@@ -1,0 +1,53 @@
+# Theme settings
+doks:
+    baseurl: /developwitharduino
+    color_theme: green
+    header:
+        logo:
+            text: Develop with Arduino
+            image:
+        nav:
+            - item_name: Arduinoの導入
+              item_url: /enviroment
+            - item_name: 構成要素
+              item_url: /component
+            - item_name: サーボモータ動作
+              item_url: /servo
+            - item_name: ロボット動作
+              item_url: /robot
+            - item_name: ラジコン操作
+              item_url: /remote
+            - item_name: 自律走行
+              item_url: /auto
+            - item_name: 今後について
+              item_url: /future
+    footer:
+        content:
+            logo:
+                text: Develop with Arduino
+                image:
+            copyright: Copyright &copy; 2025. - Life Tech Robotics <br>All rights reserved.
+        # social_list:
+        #     - network_name: facebook
+        #       profile_url: '#'
+        #     - network_name: twitter
+        #       profile_url: '#'
+        #     - network_name: instagram
+        #       profile_url: '#'
+        #     - network_name: youtube
+        #       profile_url: '#'
+    google_analytics:
+        tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
+    comments:
+        disqus_forum_shortname: # Add your disqus forum shortname to activate comments
+
+# SASS settings
+sass:
+    sass_dir: ./doks-theme/_sass
+    style: :compressed
+
+# Jekyll settings
+layouts_dir: ./doks-theme/_layouts
+includes_dir: ./doks-theme/_includes
+exclude: [ 'README.md', 'CHANGELOG.md' ]
+permalink: /:title/
