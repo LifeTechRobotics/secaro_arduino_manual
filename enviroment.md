@@ -28,14 +28,12 @@ page_nav:
         url: /component
 ---
 
-利用環境
--------------------------
-- Windows 11 Home
+# 利用環境
+- Windows 11
 - Atom Lite
 - Arduino 2.3.6
 
-導入手順
--------------------------
+## Arduino
 ### Arduino のインストール
 1. <https://www.arduino.cc/en/software/#ide> にアクセスし、 Arduino IDE をダウンロードします。 Windows 64bit OS のため、今回は **Windows Win 10 and newer, 64 bits** を選択します。
 
@@ -86,7 +84,7 @@ page_nav:
 
     ![10](../images/enviroment/10.png)
 
-3. ボードを **M5Atom** に指定します。![12](../images/enviroment/upload.png) アイコンをクリックし、コンパイルした後、Atom Lite へ書き込みます。
+3. ボードを **M5Atom** に指定します。![12](../images/enviroment/upload.png) アイコンをクリックし、コンパイルされた後、Atom Lite へ書き込みます。
     ![13](../images/enviroment/verify.png) はデバイスへ書き込まずコンパイルのみが実施されます。 
     ![11](../images/enviroment/11.png)
 
