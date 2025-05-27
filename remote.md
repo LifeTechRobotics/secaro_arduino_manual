@@ -55,7 +55,7 @@ pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
 
 2. ターミナルウィンドウで下記コマンドを実行します。
     ```
-    python .\remote.py
+    python .\controller.py
     ```
 3. リモート操作画面が表示されます。
     ![1](../images/remote/1.png)
@@ -72,7 +72,7 @@ pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
     **スキャン中**が表示され、暫くしたら、検知された Bluetooth デバイスの一覧が表示されます。
     ![2](../images/remote/2.png)
 
-2. 一覧に名前が**Nemueee(xx:xx:xx:xx:xx:xx)**のデバイスをクリックし、ペアリングの指示に従って手動でペアリングを行います。
+2. 一覧に名前が **Nemueee(xx:xx:xx:xx:xx:xx)** のデバイスをクリックし、ペアリングの指示に従って手動でペアリングを行います。
     ![2](../images/remote/3.png)
 
 3. PC > 設定 > **Bluetooth とデバイス** を開き、**デバイスの追加**より Bluetooth 種類を選択し、同じ名前 Nemueee のデバイスを追加します。
@@ -84,7 +84,7 @@ pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
     ![2](../images/remote/7.png)
     ![2](../images/remote/8.png)
 
-4. リモート操作画面で**OK**ボタンをクリックします。デバイス Nemueee の右側のステータスが**接続済み**になったら、ロボットを操作可能になります。
+4. リモート操作画面で **OK** ボタンをクリックします。デバイス Nemueee の右側のステータスが**接続済み**になったら、ロボットを操作可能になります。
     ![2](../images/remote/9.png)
 
 ## ロボットを動かす
