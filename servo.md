@@ -29,9 +29,11 @@ page_nav:
 ---
 
 # サンプルプログラムを動かしてみる
-プロジェクトファイル： servo.ino
+サンプルプロジェクトファイル： servo\servo.ino
 
 実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
+
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
 
 ## サンプルプログラムができること
 片方の車輪だけを動かします。
@@ -44,7 +46,7 @@ ledcWrite(uint8_t chan, uint32_t duty) は、ESP32などのマイコンボード
 
 ### 基本的な使い方
 ```
-ledcWrite(チャンネル番号, デューティー比);
+ledcWrite(chan, duty);
 ```
 - chan: 設定した PWM チャンネル番号（0〜15の範囲）。
 

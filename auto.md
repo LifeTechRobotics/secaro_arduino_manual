@@ -29,9 +29,11 @@ page_nav:
 ---
 
 # サンプルプログラムを動かしてみる
-プロジェクトファイル： auto.ino
+サンプルプロジェクトファイル： auto\auto.ino
 
 実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
+
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
 
 ## サンプルプログラムができること
 ロボットが自律走行します。7cm 以内に障害物が検知された場合、自動で右へ方向変換して回避します。
