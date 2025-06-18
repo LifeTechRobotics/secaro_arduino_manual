@@ -38,10 +38,10 @@ page_nav:
 1. <https://www.arduino.cc/en/software/#ide> にアクセスし、 Arduino IDE をダウンロードします。 Windows 64bit OS のため、今回は **Windows Win 10 and newer, 64 bits** を選択します。
     ![101](../images/enviroment/101.png)
 
-    無料版をダウンロードします。
+    **JUST DOWNLOAD** をクリックします。
     ![102](../images/enviroment/102.png)
 
-    メールアドレスを入力し、同意事項にチェックを入れて、購読なしでダウンロードします。
+    **JUST DOWNLOAD** をクリックします。
     ![103](../images/enviroment/103.png)
 
 2. ダウンロードしたファイル (*arduino-ide_2.3.6_Windows_64bit.exe*) をダブルクリックし、実行します。
@@ -95,7 +95,7 @@ page_nav:
 
 2. Auduino IDE で ファイル > **開く** をクリックし、プロジェクトファイル (.ino ファイル) を選択します。
 
-    ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
+    ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
     ![10](../images/enviroment/10.png)
 

@@ -35,7 +35,7 @@ page_nav:
 
 実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
 
-※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
 ### サンプルプログラムができること
 ロボットが **前進** > **後退** > **左旋回** > **右旋回** > **停止** の順で動きます。

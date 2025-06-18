@@ -33,7 +33,7 @@ page_nav:
 
 実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
 
-※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
 ## サンプルプログラムができること
 片方の車輪だけを動かします。

@@ -5,7 +5,7 @@ keywords:
 
 # Hero section
 title: Arduinoを使って開発してみよう
-description: このドキュメントは、Arduinoを使ってM5Stackでの一連の開発をお手伝いいたします。
+description: このドキュメントは、Arduinoを使ってAtom Liteでの一連の開発をお手伝いいたします。
 buttons:
     # - content: Let's get started
     #   url: '#'

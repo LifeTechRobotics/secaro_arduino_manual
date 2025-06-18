@@ -1,10 +1,10 @@
 # Theme settings
 doks:
-    baseurl: /developwitharduino
+    baseurl: /secaro_arduino_manual
     color_theme: green
     header:
         logo:
-            text: Develop with Arduino
+            text: セカロ（Secaro）で始める！Arduinoロボット入門
             image:
         nav:
             - item_name: Arduinoの導入
@@ -24,7 +24,7 @@ doks:
     footer:
         content:
             logo:
-                text: Develop with Arduino
+                text: セカロ（Secaro）マニュアル：Arduino版
                 image:
             copyright: Copyright &copy; 2025. - Life Tech Robotics <br>All rights reserved.
         # social_list:

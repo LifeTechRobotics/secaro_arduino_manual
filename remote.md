@@ -56,7 +56,7 @@ pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
 ## ラジコン操作画面を立ち上げる
 1. サンプルプログラムの controller フォルダを開き、右クリックしてメニューの**ターミナルで開く**をクリックします。
 
-   ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
+   ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
  
 
 2. ターミナルウィンドウで下記コマンドを実行します。
@@ -75,7 +75,7 @@ pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
     <p><strong>ラジコン操作画面で操作しない限り、Atom Lite が動きません。</strong></p>
 </div>
 
-※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/developwitharduino_projects)** よりダウンロードしてください。
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
 # リモート操作してみる
 ## ロボットへ接続する
