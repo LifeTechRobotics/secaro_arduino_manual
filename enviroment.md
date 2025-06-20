@@ -101,7 +101,13 @@ page_nav:
 
     ![11](../images/enviroment/11.png)
 
-3. ボードは自動的に **M5Atom** として認識されます。![12](../images/enviroment/upload.png) アイコンをクリックし、コンパイル後、Atom Lite へ書き込まれます。
+3. ボードは自動的に **M5Atom** として認識されない場合、**他のボードとポートを選択** をクリックし、下記のようにボードを**M5Atom**、ポートを**COM? Serial Port(USB)** を指定します。
+
+    ![12](../images/enviroment/1201.png)
+
+    ![12](../images/enviroment/1202.png)
+
+    ![13](../images/enviroment/upload.png) アイコンをクリックし、コンパイル後、Atom Lite へ書き込まれます。
     <div class="callout callout--danger">
         <p><strong>Atom Lite が動く可能性があるので、ご注意ください。</strong></p>
         <p>USB 接続中では通電状態なので、ファームウェアによって書き込む直後に Atom Lite が動く時があります。</p>

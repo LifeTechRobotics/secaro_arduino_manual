@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: ラジコン操作
-description: ロボットを遠隔操作できるようにしてみます。
+description: ロボットを遠隔操作してみましょう。
 
 # Author box
 # author:
@@ -31,49 +31,18 @@ page_nav:
 # 利用環境
 - Windows 11
 - Python 3.8
-- Kivy 2.3.1
 
-## 必要なライブラリ
-- pyserial
-- pybluez
-
-## インストール方法
-PC 左下の検索欄に **shell** を入力し、最も一致する検索結果の **Windows PowerShell** をクリックします。
-![0](../images/remote/0.png)
-
-下記コマンドを順次に実行します。
-```
-python -m pip install --upgrade pip
-pip install kivy
-pip install pyserial
-pip install pybluez
-```
-pybluez がインストールエラーの場合以下を試す：
-```
-pip install git+https://github.com/pybluez/pybluez.git#egg=pybluez
-```
 # リモート操作前の準備
 ## ラジコン操作画面を立ち上げる
-1. サンプルプログラムの controller フォルダを開き、右クリックしてメニューの**ターミナルで開く**をクリックします。
-
-   ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
- 
-
-2. ターミナルウィンドウで下記コマンドを実行します。
-    ```
-    python .\controller.py
-    ```
+1. サンプルプログラムの controller フォルダを開き、**controller.exe** をダブルクリックします。
+    ![0](../images/remote/0.png)
 3. リモート操作画面が表示されます。
     ![1](../images/remote/1.png)
 
-## Atom Lite を立ち上げる
-サンプルプロジェクトファイル： remote\remote.ino
+## Atom Lite を起動する
+**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
 
-実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
-
-<div class="callout callout--info">
-    <p><strong>ラジコン操作画面で操作しない限り、Atom Lite が動きません。</strong></p>
-</div>
+利用するサンプルプロジェクトファイル： remote\remote.ino
 
 ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 

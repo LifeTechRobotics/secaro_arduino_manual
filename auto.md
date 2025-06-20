@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: 自律走行
-description: お掃除ロボットのように、走行中に前方に障害物がある場合、方向転換をするようにしてみます。
+description: ロボットを自律走行させてみましょう。
 
 # Author box
 # author:
@@ -29,9 +29,9 @@ page_nav:
 ---
 
 # サンプルプログラムを動かしてみる
-サンプルプロジェクトファイル： auto\auto.ino
+**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
 
-実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
+利用するサンプルプロジェクトファイル： auto\auto.ino
 
 ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 

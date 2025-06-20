@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: サーボモータ動作
-description: サーボモータで車輪を動かしてみます。
+description: サーボモータで車輪を動かしてみましょう。
 
 # Author box
 # author:
@@ -29,9 +29,9 @@ page_nav:
 ---
 
 # サンプルプログラムを動かしてみる
-サンプルプロジェクトファイル： servo\servo.ino
+**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
 
-実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
+利用するサンプルプロジェクトファイル： servo\servo.ino
 
 ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
@@ -41,112 +41,69 @@ page_nav:
 速度を上げながら**正回転** > **停止** > 速度を上げながら**逆回転** > **停止** の順で動きます。
 
 # プログラミング
-## ledcWrite関数
-ledcWrite(uint8_t chan, uint32_t duty) は、ESP32などのマイコンボードで PWM（パルス幅変調）を使って LED やモーターなどを制御するための関数です。Arduino IDE や PlatformIO などで ESP32 開発するときによく使われます。
-
-### 基本的な使い方
-```
-ledcWrite(chan, duty);
-```
-- chan: 設定した PWM チャンネル番号（0〜15の範囲）。
-
-- duty: デューティー比（PWMのON時間）。範囲は、事前に設定したビット数（例えば 8ビットなら 0〜255）に依存します。
-
-### 事前の初期化が必要
-ledcWrite() を使う前に、以下のように PWM のチャンネル設定やピンの割り当てをしておく必要があります。
-
-例：
-```
-const int ledPin = 18;       // GPIO 18 を使用
-const int pwmChannel = 0;    // チャンネル 0 を使う
-const int freq = 5000;       // PWM 周波数
-const int resolution = 8;    // 8ビットの分解能（0～255）
-
-void setup() {
-  // PWM チャンネルの初期化
-  ledcSetup(pwmChannel, freq, resolution);
-
-  // チャンネルとピンの紐づけ
-  ledcAttachPin(ledPin, pwmChannel);
-}
-
-void loop() {
-  // デューティー比を 127（約50%）に設定
-  ledcWrite(pwmChannel, 127);
-  delay(1000);
-
-  // デューティー比を 255（100%）に設定
-  ledcWrite(pwmChannel, 255);
-  delay(1000);
-
-  // デューティー比を 0（OFF）に設定
-  ledcWrite(pwmChannel, 0);
-  delay(1000);
-}
-```
-###  ポイント
-- resolution を 8 にすれば、duty は 0〜255 の範囲。
-- resolution を 10 にすれば、duty は 0〜1023。
-- ledcWrite() は、アナログのような出力（PWM）をデジタルピンで実現できます。
-
 ## setup()
-M5 Atom Lite の初期化を行います。
-```
-// M5 の初期化
-M5.begin(true, false, true);
-```
-ledcWrite() を使う前に、PWM のチャンネル設定やピンの割り当てを行います。
-```
-const int ledPin = 19;       // Servo PIN 19 を使用
-const int pwmChannel = 1;    // チャンネル 1 を使う
-
-// PWM チャンネルの初期化
-ledcSetup(pwmChannel, freq, resolution);
-// チャンネルとピンの紐づけ
-ledcAttachPin(ledPin, pwmChannel);
-}
-```
-- チャンネルは、1　を利用します。
-- サーボ Pin は、 19 を利用します。
+各種初期化を行います。
 
 ## loop()
 速度の設定を行います。
 
-今回利用するサーボモータが設定可能なデューティ比の範囲：
-- 5000 〜 8500 正回転
-    - 最小値 5000
-    - 最大値 8500
-- 5000 〜 1500 逆回転
-    - 最小値 5000
-    - 最大値 1500
+
+## ledcWrite関数
+この関数は、ESP32などのマイコンボードで PWM（パルス幅変調）を使って LED やモーターなどを制御するための関数です。Arduino IDE や PlatformIO などで ESP32 開発するときによく使われます。
+
+### 基本的な使い方
+```
+void ledcWrite(uint8_t pin, uint32_t duty);
+```
+- pin: PWM 信号を出力する GPIO 番号（例：13 や 25）。本章では 19 を利用します。
+
+- duty: デューティー比（PWMのON時間）。範囲は、事前に設定した分解能（resolution）に依存します。
+
+### 事前の初期化が必要
+ledcWrite() を使う前に、以下のようにピンの割り当てをしておく必要があります。
 
 ```
-#define DUTY_LOW 1500
-#define DUTY_MID 5000
-#define DUTY_HIGH 8500
-
-void loop() {
-  if(run == true) {
-    //正回転
-    for(int i = DUTY_MID; i < DUTY_HIGH; i = i + 100){  
-      ledcWrite(pwmChannel, i);
-      delay(50);
-    }
-
-    // 停止
-    ledcWrite(pwmChannel, 0);
-    delay(1000);
-    
-    //逆回転
-    for(int i = DUTY_MID; i > DUTY_LOW; i = i - 100){  
-      ledcWrite(pwmChannel, i);
-      delay(50);
-    }
-    
-    // 停止
-    ledcWrite(pwmChannel, 0);
-
-    run = false;
-  }
+void setup() {
+  // LEDC PIN設定
+  ledcAttach(PIN_1, FREQ, RESOLUTION);
 }
 ```
+## ledcAttach関数
+この関数は、指定した GPIO ピンに対して PWM 出力（LED 調光、モーター制御など）を割り当て、内部で自動的にタイマーとチャンネルをセットアップします。
+
+### 基本的な使い方
+```
+bool ledcAttach(uint8_t pin, uint32_t freq, uint8_t resolution);
+```
+- pin: PWM 信号を出力する GPIO 番号（例：13 や 25）。本章では 19 を利用します。
+
+- freq: PWM の周波数（Hz）。例：50（サーボ）、5000（LED）。今回利用する Servo Kit 360° の標準仕様は 50Hz。
+
+- resolution: 分解能（bit単位）。例：8bit（256段階）、12bit（4096段階）
+
+## デューティー比
+今回利用する Servo Kit 360° の仕様：
+- 周波数： 50Hz（周期 = 20ms）
+- パルス幅： 0.5ms〜2.5ms（中心は 1.5ms）
+
+パルス幅を 0.5ms〜2.5ms の範囲で制御するには：
+
+20ms を何ステップで分けるか = 分解能に依存
+
+たとえば 16bit（2^16 = 65535） の場合：
+```yaml
+PWM周期 = 65535ステップ → 1ステップ ≈ 0.3μs（= 20ms / 65535）
+1.5ms = 約4915ステップ
+2.5ms = 約8191ステップ
+0.5ms = 約1638ステップ
+```
+よって、今回利用する Servo Kit 360° のデューティー比範囲は、約1638〜8191。
+
+また、このサーボモーターは「連続回転型サーボ」です。
+
+PWM 信号の デューティ比（≒パルス幅）によって、回転方向・回転速度を制御します。
+
+中立値（1.5ms）で停止、0.5ms で最大逆転、2.5ms で最大正転。
+
+すなわち、正転範囲は、約4915〜8191、逆転範囲は、約4915〜1638。
+

@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: ロボット動作
-description: ロボットを前後左右に動かしてみます。
+description: ロボットを前後左右に動かしてみましょう。
 
 # Author box
 # author:
@@ -31,9 +31,9 @@ page_nav:
 # ロボットを動かす
 
 ## サンプルプログラムを動かしてみる
-サンプルプロジェクトファイル： robot\robot.ino
+**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
 
-実行方法は、**Arduinoの導入**ー**サンプルプログラムの動かし方** を参照してください。
+利用するサンプルプロジェクトファイル： robot\robot.ino
 
 ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
