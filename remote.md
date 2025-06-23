@@ -88,3 +88,65 @@ page_nav:
 真ん中の停止ボタンをクリックしたら、ロボットが停止します。
 
 ![11](../images/remote/stop.png)
+
+# プログラミング
+## ラジコン操作画面
+サンプルソース： controller\src
+
+フォルダ構成
+```yaml
+src/
+├── controller.py        ボタンの動作などを記述するPythonファイル
+├── ui.kv                GUIを描画するためのkivyファイル
+└── ipaexg.ttf           日本語フォント
+```
+
+※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
+
+## ファームウェア
+
+### setup()
+各種初期化を行います。
+
+ラジコン操作画面と Atom Lite は Bluetooth で接続するため、前章より Bluetooth デバイスの初期化処理が追加されます。
+```
+#define DEVICE_NAME "Secaro"   // Bluetoothデバイス名
+
+BluetoothSerial SerialBT;
+
+void setup() {
+    // Bluetooth待ち受け開始
+    SerialBT.begin(DEVICE_NAME);
+    delay(200);
+    SerialBT.setTimeout(2000);
+}
+```
+
+### loop()
+ラジコン操作画面からの指令を受け取り、車輪を制御します。
+
+#### 操作画面からの指令
+ラジコン操作画面から受け取る指令の種類は下記になります。
+- 前進　　　F
+- 後退　　　B
+- 左旋回　　L
+- 右旋回　　R
+- 停止　　　S
+- 通信確認　P
+- 左輪速度指定　lx　（x=1〜9）
+- 右輪速度指定　rx　（x=1〜9）
+
+#### 速度設定
+今回利用する Servo Kit 360° 停止になる duty 値はおよそ 307 ですが、実際は一定の区間内の値なら全て停止になります。より正確に速度を制御するため、閾値を利用します。
+```
+const int centerDuty = (int)(4096 * 1.5 / 20.0); // 1.5ms に相当する duty（約307） → 停止
+const int centerDutyHigh = 313;  // 停止範囲の上限
+const int centerDutyLow = 290;   // 停止範囲の下限
+
+void loop() {
+    // 前進
+    ledcWrite(PIN_1, centerDutyHigh + step*spdL);
+    ledcWrite(PIN_2, centerDutyLow - step*spdR);
+}
+```
+

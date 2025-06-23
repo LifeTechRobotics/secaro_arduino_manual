@@ -28,98 +28,86 @@ page_nav:
         url: /remote
 ---
 
-# ロボットを動かす
-
-## サンプルプログラムを動かしてみる
+# サンプルプログラムを動かしてみる
 **Arduinoの導入**ー**サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
 
 利用するサンプルプロジェクトファイル： robot\robot.ino
 
 ※サンプルプログラムは、**[Github](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
 
-### サンプルプログラムができること
-ロボットが **前進** > **後退** > **左旋回** > **右旋回** > **停止** の順で動きます。
+## サンプルプログラムができること
+ロボットが下記のように動きます。
+1. 前進
+2. 後退
+3. 左旋回
+4. 右旋回
+5. 停止
 
-## プログラミング
-### setup()
-M5 Atom Lite の初期化を行います。
+# プログラミング
+## setup()
+各種初期化を行います。
+
+2つの車輪を動かすため、前章より利用する GPIO ピンが一つ増えますが、番号 19、22 を利用します。
 ```
-// M5 の初期化
-M5.begin(true, false, true);
+#define PIN_1 19          // 車輪サーボ1
+#define PIN_2 22          // 車輪サーボ2
+
+void setup() {
+    // LEDC PIN設定
+    ledcAttach(PIN_1, FREQ, RESOLUTION);
+    ledcAttach(PIN_2, FREQ, RESOLUTION);
+
+    // 初期停止
+    ledcWrite(PIN_1, centerDuty);
+    ledcWrite(PIN_2, centerDuty);
+    delay(1000);
+}
 ```
-ledcWrite() を使う前に、PWM のチャンネル設定やピンの割り当てを行います。
+## loop()
+速度制御を行います。
+
+下記のように方向を制御します。
+- 前進
+    - サーボ 1　　　正転
+    - サーボ 2　　　逆転
+- 後退
+    - サーボ 1　　　逆転
+    - サーボ 2　　　正転
+- 左旋回
+    - サーボ 1　　　逆転
+    - サーボ 2　　　逆転
+- 右旋回
+    - サーボ 1　　　正転
+    - サーボ 2　　　正転
+    
 ```
-const int ledPin1 = 19;       // Servo1 PIN 19 を使用
-const int ledPin2 = 22;       // Servo2 PIN 22 を使用
-const int pwmChannel1 = 1;    // チャンネル 1 を使う
-const int pwmChannel2 = 2;    // チャンネル 2 を使う
-
-// PWM チャンネルの初期化    
-ledcSetup(pwmChannel1, freq, resolution);
-ledcSetup(pwmChannel2, freq, resolution);
-// チャンネルとピンの紐づけ
-ledcAttachPin(ledPin1, pwmChannel1);
-ledcAttachPin(ledPin2, pwmChannel2);
-```
-- サーボ Pin 19は、 チャンネル 1 と紐つけます。
-- サーボ Pin 22は、 チャンネル 2 と紐つけます。
-
-### loop()
-速度の設定を行います。
-
-今回利用するサーボモータが設定可能なデューティ比の範囲：
-- 5000 〜 8500 正回転
-    - 最小値 5000
-    - 最大値 8500
-- 5000 〜 1500 逆回転
-    - 最小値 5000
-    - 最大値 1500
-
-```
-#define DUTY_LOW 1500
-#define DUTY_MID 5000
-#define DUTY_HIGH 8500
-#define DUTY_STEP 1000
-
 void loop() {
   if(run == true) {
-    //前進
-    ledcWrite(pwmChannel1, DUTY_MID + DUTY_STEP);
-    ledcWrite(pwmChannel2, DUTY_MID - DUTY_STEP);
+    // 前進
+    ledcWrite(PIN_1, centerDuty + step);
+    ledcWrite(PIN_2, centerDuty - step);
     delay(2000);
 
-    //後退
-    ledcWrite(pwmChannel1, DUTY_MID - DUTY_STEP);
-    ledcWrite(pwmChannel2, DUTY_MID + DUTY_STEP);
+    // 後退
+    ledcWrite(PIN_1, centerDuty - step);
+    ledcWrite(PIN_2, centerDuty + step);
     delay(2000);
     
-    //左旋回
-    ledcWrite(pwmChannel1, DUTY_MID - DUTY_STEP);
-    ledcWrite(pwmChannel2, DUTY_MID - DUTY_STEP);
+    // 左旋回
+    ledcWrite(PIN_1, centerDuty - step);
+    ledcWrite(PIN_2, centerDuty - step);
     delay(2000);
 
-    //右旋回
-    ledcWrite(pwmChannel1, DUTY_MID + DUTY_STEP);
-    ledcWrite(pwmChannel2, DUTY_MID + DUTY_STEP);
+    // 右旋回
+    ledcWrite(PIN_1, centerDuty + step);
+    ledcWrite(PIN_2, centerDuty + step);
     delay(2000);
 
     // 停止
-    ledcWrite(pwmChannel1, 0);
-    ledcWrite(pwmChannel2, 0);
+    ledcWrite(PIN_1, centerDuty);
+    ledcWrite(PIN_2, centerDuty);
 
     run = false;
   }
 }
 ```
-- 前進
-    - サーボモータ 1    正回転
-    - サーボモータ 2    逆回転
-- 後退
-    - サーボモータ 1    逆回転
-    - サーボモータ 2    正回転
-- 左旋回
-    - サーボモータ 1    逆回転
-    - サーボモータ 2    逆回転
-- 右旋回
-    - サーボモータ 1    正回転
-    - サーボモータ 2    正回転
