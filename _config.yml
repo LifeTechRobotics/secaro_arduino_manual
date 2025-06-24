@@ -26,7 +26,7 @@ doks:
             logo:
                 text: セカロ（Secaro）マニュアル：Arduino版
                 image:
-            copyright: Copyright &copy; 2025. - Life Tech Robotics <br>All rights reserved.
+            copyright: Copyright &copy; 2025 Life Tech Robotics <br>All rights reserved.
         # social_list:
         #     - network_name: facebook
         #       profile_url: '#'
