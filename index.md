@@ -4,8 +4,8 @@ layout: homepage
 keywords:
 
 # Hero section
-title: Arduinoを使って開発してみよう
-description: このドキュメントは、Arduinoを使ってAtom Liteでの一連の開発をお手伝いいたします。
+title: セカロ（Secaro）でロボットはじめよう！（Arduino編）
+description: ロボット開発の第一歩を、セカロと一緒に。
 buttons:
     # - content: Let's get started
     #   url: '#'

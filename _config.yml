@@ -4,7 +4,7 @@ doks:
     color_theme: green
     header:
         logo:
-            text: セカロ（Secaro）でロボットはじめよう！（Arduino編）
+            text: セカロ（Secaro）マニュアル：Arduino版
             image:
         nav:
             - item_name: Arduinoの導入
