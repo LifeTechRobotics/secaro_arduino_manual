@@ -4,7 +4,7 @@ layout: homepage
 keywords:
 
 # Hero section
-title: セカロ（Secaro）でロボットはじめよう！（Arduino編）
+title: セカロでロボットはじめよう！
 description: ロボット開発の第一歩を、セカロと一緒に。
 buttons:
     # - content: Let's get started
@@ -24,32 +24,32 @@ buttons:
 
 # Grid navigation
 grid_navigation:
-    - title: Arduinoの導入
+    - title: 1. Arduino IDEの導入
       excerpt: Arduinoが使えるように環境を整いましょう。
       cta: Read more
       url: /enviroment
-    - title: 構成要素
+    - title: 2. 構成要素
       excerpt: ロボットを作るために必要なものを見てみましょう。
       cta: Read more
-      url: /component     
-    - title: サーボモータ動作
+      url: /component
+    - title: 3. サーボモータ動作
       excerpt: ロボットに車輪をつけて動かしてみましょう。
       cta: Read more
-      url: /servo      
-    - title: ロボット動作
+      url: /servo
+    - title: 4. ロボット動作
       excerpt: ロボットを前後左右に動かしてみましょう。
       cta: Read more
       url: /robot
-    - title: ラジコン操作
+    - title: 5. ラジコン操作
       excerpt: ロボットを遠隔操作してみましょう。
       cta: Read more
-      url: /remote    
-    - title: 自律走行（お掃除ロボット動作）
+      url: /remote
+    - title: 6. 自律走行（お掃除ロボット動作）
       excerpt: ロボットが障害物を避けられるようにしてみましょう。
       cta: Read more
-      url: /auto     
-    - title: 今後について
-      excerpt: ROSを対応する予定です。
+      url: /auto
+    - title: 7. ROSについて
+      excerpt: 対応予定！
       cta: Read more
-      url: /future     
+      url: /ros
 ---

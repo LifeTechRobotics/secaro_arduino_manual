@@ -5,7 +5,7 @@ keywords:
 comments: false
 
 # Hero section
-title: Arduinoの導入
+title: Arduino IDEの導入
 description: Arduinoを導入するための環境設定を行います。
 
 # Author box
@@ -24,7 +24,7 @@ page_nav:
     #     content: Previous page
     #     url: '#'
     next:
-        content: 構成要素
+        content: 2. 構成要素
         url: /component
 ---
 
@@ -39,7 +39,7 @@ page_nav:
 
 ## Arduino IDE のインストール
 
-1. <https://www.arduino.cc/en/software/#ide> にアクセスし、Arduino IDE をダウンロードします。Windows 64bit OS のため、今回は **Windows Win 10 and newer, 64 bits** を選択します。  
+1. <a href="https://www.arduino.cc/en/software/#ide" target="_blank" rel="noopener noreferrer">https://www.arduino.cc/en/software/#ide</a> にアクセスし、Arduino IDE をダウンロードします。自身のPC環境を確認し、適切なものを選択します。今回は例として、**Windows Win 10 and newer, 64 bits** を選択します。  
     ![101](../images/enviroment/101.png)
 
     **JUST DOWNLOAD** をクリックします。  
@@ -96,12 +96,16 @@ page_nav:
 1. Atom Lite を USB で PC に接続します。
 
     > ℹ️ **FTDI ドライバが必要な場合**  
-    > <https://ftdichip.com/drivers/vcp-drivers/> より `CDM2123620_Setup.zip` をダウンロード・展開・インストールしてください。  
+    > 使用しているパソコンによっては、FTDIドライバのインストールが必要になる場合があります。  
+    > ※通常のWindows11であれば、標準ドライバで動作するため下記手順は必要ありません。  
+    > Atom Liteと接続出来ない場合などに試してみてください。  
+    
+    > <a href="https://ftdichip.com/drivers/vcp-drivers" target="_blank" rel="noopener noreferrer">https://ftdichip.com/drivers/vcp-drivers</a> より `CDM2123620_Setup.zip` をダウンロード・展開・インストールしてください。  
     > ![9](../images/enviroment/9.png)
 
 2. Arduino IDE で **ファイル > 開く** をクリックし、プロジェクトファイル（`.ino`）を選択します。  
 
-    ※サンプルプログラムは **[GitHub](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** からダウンロード可能です。  
+    ※サンプルプログラムは **<a href="https://github.com/LifeTechRobotics/secaro_arduino_projects.git" target="_blank" rel="noopener noreferrer">GitHub</a>** からダウンロード可能です。  
     ![10](../images/enviroment/10.png)  
 
     ![11](../images/enviroment/11.png)

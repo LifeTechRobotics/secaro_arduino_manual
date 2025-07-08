@@ -5,8 +5,8 @@ keywords:
 comments: false
 
 # Hero section
-title: 今後について
-description: ROS対応する予定になっております。
+title: ROSについて
+description: ROSを対応する予定になっております。
 
 # Author box
 # author:
@@ -21,7 +21,7 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: 自律走行
+        content: 6. 自律走行
         url: /auto
 ---
 

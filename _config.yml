@@ -4,10 +4,10 @@ doks:
     color_theme: green
     header:
         logo:
-            text: セカロ（Secaro）マニュアル：Arduino版
+            text: セカロ（Secaro）マニュアル：Arduino IDE版
             image:
         nav:
-            - item_name: Arduinoの導入
+            - item_name: Arduino IDEの導入
               item_url: /enviroment
             - item_name: 構成要素
               item_url: /component
@@ -19,12 +19,12 @@ doks:
               item_url: /remote
             - item_name: 自律走行
               item_url: /auto
-            - item_name: 今後について
-              item_url: /future
+            - item_name: ROSについて
+              item_url: /ros
     footer:
         content:
             logo:
-                text: セカロ（Secaro）マニュアル：Arduino版
+                text: セカロ（Secaro）マニュアル：Arduino IDE版
                 image:
             copyright: Copyright &copy; 2025 Life Tech Robotics <br>All rights reserved.
         # social_list:

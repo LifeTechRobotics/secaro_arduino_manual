@@ -21,10 +21,10 @@ micro_nav: true
 # Page navigation
 page_nav:
     prev:
-        content: ロボット動作
+        content: 4. ロボット動作
         url: /robot
     next:
-        content: 自律走行
+        content: 6. 自律走行
         url: /auto
 ---
 
@@ -47,10 +47,10 @@ page_nav:
 
 ## Atom Lite を起動する
 
-**Arduinoの導入** ー **サンプルプログラムの動かし方** を参照し、Atom Lite を起動します。
+**Arduino IDEの導入 > <a href="../enviroment/#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E5%8B%95%E3%81%8B%E3%81%97%E6%96%B9" target="_blank" rel="noopener noreferrer">サンプルプログラムの動かし方</a>** を参照し、Atom Lite を起動します。
 
 - 利用するサンプルプロジェクトファイル：`remote/remote.ino`
-- サンプルプログラムは、**[GitHub](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
+- サンプルプログラムは、**<a href="https://github.com/LifeTechRobotics/secaro_arduino_projects.git" target="_blank" rel="noopener noreferrer">GitHub</a>** よりダウンロードしてください。
 
 ---
 
@@ -113,7 +113,7 @@ page_nav:
 ## ラジコン操作画面
 
 - サンプルプログラムは `controller/src` に格納されています。
-- サンプルプログラムは、**[GitHub](https://github.com/LifeTechRobotics/secaro_arduino_projects.git)** よりダウンロードしてください。
+- サンプルプログラムは、**<a href="https://github.com/LifeTechRobotics/secaro_arduino_projects.git" target="_blank" rel="noopener noreferrer">GitHub</a>** よりダウンロードしてください。
 
 ```yaml
 src/
