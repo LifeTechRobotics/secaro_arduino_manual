@@ -33,11 +33,10 @@ page_nav:
 - Atom Lite  
 - Arduino 2.3.6  
 
----
 
-# Arduino の導入
+# Arduino IDEの導入
 
-## Arduino IDE のインストール
+## Arduino IDEのインストール
 
 1. <a href="https://www.arduino.cc/en/software/#ide" target="_blank" rel="noopener noreferrer">https://www.arduino.cc/en/software/#ide</a> にアクセスし、Arduino IDE をダウンロードします。自身のPC環境を確認し、適切なものを選択します。今回は例として、**Windows Win 10 and newer, 64 bits** を選択します。  
     ![101](../images/enviroment/101.png)
@@ -58,9 +57,11 @@ page_nav:
     
     ![205](../images/enviroment/205.png)
 
----
 
 ### ボードのインストール
+
+使用するデバイスに応じて、必要なボードをインストールします。
+本マニュアルでは Atom Lite を使用するため、対応するボードのインストールを行います。
 
 1. メニューから **ファイル > 基本設定** を開きます。  
     ![3](../images/enviroment/3.png)
@@ -71,23 +72,23 @@ page_nav:
     「追加のボードマネージャの URL」に上記を入力し、**OK** をクリックして保存します。  
     ![4](../images/enviroment/4.png)
 
-2. サイドバーの **ボード管理** を開き、`M5Stack` を検索して **インストール** をクリックします。  
+2. サイドバーの **ボードマネージャー** を開き、`M5Stack` を検索して **インストール** をクリックします。  
     ![5](../images/enviroment/5.png)
 
 3. 使用するボードに応じて、**ツール > ボード > M5Stack** から該当する開発ボードを選択します。Atom Lite の場合は **M5Atom** を選択してください。  
     ![6](../images/enviroment/6.png)
 
----
 
 ### ライブラリのインストール
 
-1. サイドバーの **ライブラリ管理** を開き、`M5Atom` を検索して **インストール** をクリックします。  
+本マニュアルでは Atom Lite を使用するため、必要な関連ライブラリをインストールします。
+
+1. サイドバーの **ライブラリマネージャー** を開き、`M5Atom` を検索して **インストール** をクリックします。  
     ![7](../images/enviroment/7.png)
 
     **全てをインストール** をクリックします。  
     ![8](../images/enviroment/8.png)
 
----
 
 ## サンプルプログラムの動かし方
 
@@ -96,9 +97,9 @@ page_nav:
 1. Atom Lite を USB で PC に接続します。
 
     > ℹ️ **FTDI ドライバが必要な場合**  
-    > 使用しているパソコンによっては、FTDIドライバのインストールが必要になる場合があります。  
-    > ※通常のWindows11であれば、標準ドライバで動作するため下記手順は必要ありません。  
-    > Atom Liteと接続出来ない場合などに試してみてください。  
+    > 使用しているパソコンによっては、FTDI ドライバのインストールが必要になる場合があります。  
+    > ※通常の Windows 11 であれば、標準ドライバで動作するため下記手順は必要ありません。  
+    > Atom Lite と接続出来ない場合などに試してみてください。  
     
     > <a href="https://ftdichip.com/drivers/vcp-drivers" target="_blank" rel="noopener noreferrer">https://ftdichip.com/drivers/vcp-drivers</a> より `CDM2123620_Setup.zip` をダウンロード・展開・インストールしてください。  
     > ![9](../images/enviroment/9.png)
@@ -118,30 +119,33 @@ page_nav:
 
     ![12](../images/enviroment/1202.png)
 
-4. ![13](../images/enviroment/upload.png) をクリックして書き込みます。
+4. ![13](../images/enviroment/upload.png) をクリックして書き込みます。  
 
-    > ⚠️ **注意：Atom Lite が動く可能性があります**  
-    > 書き込み直後にロボットが動くことがあります。ケーブルが絡まないよう、書き込む前にロボットの車輪が浮くように手で持ち上げてください。  
-    > ![14](../images/enviroment/14.png)
+    <div class="callout callout--danger">
+        <p><strong>注意：ロボットがすぐ動く場合があります</strong></p>
+        <p>書き込み直後にロボットが動くため、ケーブルが絡まないよう、書き込む前にロボットの車輪が浮くように手で持ち上げてください。</p>
+    </div>
+    
+    ![14](../images/enviroment/14.png)
 
     > ℹ️ **複数のポートがある場合**  
     > デバイスマネージャーからポート番号を確認してください。  
-    > コントロールパネル > デバイスマネージャー  
+    > **コントロールパネル** > **デバイスマネージャー**  
     > ![15](../images/enviroment/15.png)
 
----
 
-### Atom Lite を動かす
+### ロボットを動かす
 
 1. USB ケーブルを外します。  
-2. Atom Lite の電源ボタンを押します。
+2. ロボットの電源ボタンを ON にします。
 
-    > ⚠️ **注意：Atom Lite がすぐ動く場合があります**  
-    > 電源を入れた直後にロボットが動くことがありますので、動いても問題ない安全な場所で行ってください。
+    <div class="callout callout--danger">
+        <p><strong>注意：ロボットがすぐ動く場合があります</strong></p>
+        <p>電源を入れた直後にロボットが動くことがありますので、動いても問題ない安全な場所で行ってください。</p>
+    </div>
 
----
 
-## Arduino プログラムの基本構造
+## Arduinoプログラムの基本構造
 
 Arduino で書くプログラム（スケッチ）は、主に次の 2 つの関数から構成されます。
 
@@ -155,4 +159,3 @@ void loop() {
   // 繰り返し実行される処理
 }
 ```
-
