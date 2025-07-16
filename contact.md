@@ -31,6 +31,6 @@ page_nav:
 
 **🧑‍💼 開発会社名**　　：株式会社 Life Tech Robotics  
 **📍 住所**　　　　　：〒116-0003 東京都荒川区南千住8-5-7  
-**🌐 ホームページ**　：[https://ltrobo.com](https://ltrobo.com)  
+**🌐 ホームページ**　：<a href="https://ltrobo.com" target="_blank" rel="noopener noreferrer">https://ltrobo.com</a>    
 **✉️ メールアドレス**：takemoto@ltrobo.co.jp
 
