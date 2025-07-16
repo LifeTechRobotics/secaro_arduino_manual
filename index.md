@@ -25,7 +25,7 @@ buttons:
 # Grid navigation
 grid_navigation:
     - title: 1. Arduino IDEの導入
-      excerpt: Arduinoが使えるように環境を整いましょう。
+      excerpt: Arduinoの開発環境を整えましょう。
       cta: Read more
       url: /enviroment
     - title: 2. 構成要素
@@ -52,4 +52,8 @@ grid_navigation:
       excerpt: 対応予定！
       cta: Read more
       url: /ros
+    - title: 8. サポート
+      excerpt: 私たちが問題解決のお手伝いをします。
+      cta: Read more
+      url: /contact
 ---

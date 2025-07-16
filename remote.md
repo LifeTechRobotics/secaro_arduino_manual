@@ -31,7 +31,7 @@ page_nav:
 # サンプルプログラム
 
 ## サンプルプログラムのダウンロード
-- リモート操作プログラム(Windows)  
+- リモート操作用プログラム（Windows）  
       `controller` 
 
 - ファームウェア  
@@ -194,7 +194,7 @@ src/
   ※Arduino Core for ESP32 に標準で含まれており、別途インストールは不要です。
 
 - **BluetoothSerial**  
-  ESP32 の Bluetooth Classic 通信機能を提供します。
+  ESP32 の Bluetooth Classic 通信機能を提供します。  
   ※Arduino Core for ESP32 に標準で含まれており、別途インストールは不要です。
 
 #### ピン設定

@@ -6,7 +6,7 @@ comments: false
 
 # Hero section
 title: ROSについて
-description: ROSを対応する予定になっております。
+description: 対応予定！
 
 # Author box
 # author:
@@ -23,5 +23,8 @@ page_nav:
     prev:
         content: 6. 自律走行
         url: /auto
+    next:
+        content: 8. サポート
+        url: /contact
 ---
 
