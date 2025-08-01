@@ -32,7 +32,20 @@ page_nav:
 
 ## サンプルプログラムのダウンロード
 
-- 利用するサンプルプロジェクトファイル：`auto/auto.ino`
+- リモート操作用プログラム（Windows）  
+```yaml
+controller/
+├── controller_bluetooth      # Bluetooth版
+└── controller_wifi           # Wi-Fi版
+```
+
+- ファームウェア  
+```yaml
+auto/
+├── auto_bluetooth      # Bluetooth版
+└── auto_wifi           # Wi-Fi版
+```
+
 - サンプルプログラムは、**<a href="https://github.com/LifeTechRobotics/secaro_arduino_projects.git" target="_blank" rel="noopener noreferrer">GitHub</a>** よりダウンロードしてください。
 
 
@@ -118,6 +131,21 @@ page_nav:
     複数のライブラリが表示されますが、VL53L1X `by Pololu` を選び、 **インストール** をクリックします。  
       ![1](../images/auto/2.png)
 
+- **BluetoothSerial**  
+  Bluetooth 版のみが必要です。  
+  ESP32 の Bluetooth Classic 通信機能を提供します。  
+  ※Arduino Core for ESP32 に標準で含まれており、別途インストールは不要です。  
+
+- **WiFi.h**  
+  Wi-Fi 版のみが必要です。  
+  ESP32 の無線 LAN 機能（Wi-Fi）を利用するための標準ライブラリです。  
+  ※Arduino Core for ESP32 に標準で含まれており、別途インストールは不要です。  
+
+- **WiFiUdp.h**  
+  Wi-Fi 版のみが必要です。  
+  Wi-Fi 経由での UDP（User Datagram Protocol）通信を行うためのライブラリです。  
+  ※Arduino Core for ESP32 に標準で含まれており、別途インストールは不要です。  
+
 ### ピン設定
 
 | 機能              | GPIOピン |
@@ -128,6 +156,15 @@ page_nav:
 | I2C SDA（VL53L1X）| 26       |
 | I2C SCL（VL53L1X）| 32       |
 
+#### ポート設定
+
+この設定は、**Wi-Fi版のみ** に適用されます。   
+通信に使用するポート番号は、以下の通りです。
+
+| 内容 　　　　　　　　　　| ポート番号       |
+|--------------------------|------------------|
+|  ブロードキャスト送信    |   4210           |
+|  コマンド受信            |   4211           |
 
 ## setup()
 
@@ -138,14 +175,14 @@ page_nav:
 TOF センサーは、ロボット前進中に **30°〜150°** の範囲内で、**500ms ごとに 30°ずつ**回転します。
 
 ```cpp
-#define PIN_SS 23              // センサーサーボ
+const char* PIN_SS = 23;              // センサーサーボ
 
 // センサーサーボの回転角度
-#define DEGREE_MIN 30
-#define DEGREE_MAX 150
+const char* DEGREE_MIN = 30;
+const char* DEGREE_MAX = 150;
 
-#define INTERVAL_TIME_SS 500         // センサーサーボの回転間隔
-#define OBSTACLE_THRESHOLD 70        // 障害探知距離（mm）
+const char* INTERVAL_TIME_SS = 500;         // センサーサーボの回転間隔
+const char* OBSTACLE_THRESHOLD = 70;        // 障害探知距離（mm）
 
 int deg_step = 30;                   // 1回につきの回転角度
 

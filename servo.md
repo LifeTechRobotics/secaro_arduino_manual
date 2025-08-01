@@ -150,9 +150,9 @@ void ledcWrite(uint8_t pin, uint32_t duty);
 `ledcWrite()` を使う前に、以下のように初期設定を行っておく必要があります。
 
 ```cpp
-#define PIN_1 19          // 車輪サーボ1
-#define FREQ 50           // PWM周波数（Hz）
-#define RESOLUTION 12     // 分解能（12ビット）
+const int PIN_1 = 19;          // 車輪サーボ1
+const int FREQ = 50;           // PWM周波数（Hz）
+const int RESOLUTION = 12;     // 分解能（12ビット）
 
 void setup() {
     ledcAttach(PIN_1, FREQ, RESOLUTION);

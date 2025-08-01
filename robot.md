@@ -98,8 +98,8 @@ page_nav:
 2つの車輪を動かすため、前章よりも使用する GPIO ピンが一つ増えます。ここでは GPIO 19 と 22 を利用します。
 
 ```cpp
-#define PIN_1 19          // 車輪サーボ1
-#define PIN_2 22          // 車輪サーボ2
+const int PIN_1 = 19;          // 車輪サーボ1
+const int PIN_2 = 22;          // 車輪サーボ2
 
 void setup() {
     // LEDC PIN設定
